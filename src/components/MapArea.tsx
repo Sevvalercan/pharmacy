@@ -11,7 +11,7 @@ export default function MapArea({ visible }: Props) {
         Harita Üzerinde Gösterim
       </h2>
       <div className="mx-auto h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-indigo-600 font-semibold">
-        Harita burada görünecek (örnek alan)
+        Harita burada görünecek 
       </div>
     </div>
   );
