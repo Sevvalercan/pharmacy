@@ -87,14 +87,15 @@ export default function Navbar() {
           <img
             src="/images/logo.svg"
             alt="Logo"
-            className="w-28 h-auto object-contain"
+            className="w-40 h-auto object-contain"
           />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           {navItems.map(({ href, label }) => {
-            const isActive = pathname === href || pathname.startsWith(href + "/");
+            const isActive =
+              pathname === href || pathname.startsWith(href + "/");
 
             return (
               <Link
@@ -102,10 +103,10 @@ export default function Navbar() {
                 href={href}
                 className={`transition-colors duration-300 cursor-pointer ${
                   isActive
-                    ? "text-blue-500"
+                    ? "text-blue-600 font-semibold"
                     : scrolled
-                    ? "text-blue-500 hover:text-blue-700"
-                    : "text-blue-800 hover:text-blue-200"
+                    ? "text-blue-900 hover:text-blue-600"
+                    : "text-blue-800 hover:text-blue-500"
                 }`}
               >
                 {label}
@@ -135,16 +136,17 @@ export default function Navbar() {
           exit={{ opacity: 0, height: 0 }}
           className="absolute top-full left-0 w-full bg-white shadow-md md:hidden"
         >
-          <div className="flex flex-col space-y-4 p-6">
+          <div className="flex flex-col items-center space-y-4 p-6">
             {navItems.map(({ href, label }) => {
-              const isActive = pathname === href || pathname.startsWith(href + "/");
+              const isActive =
+                pathname === href || pathname.startsWith(href + "/");
 
               return (
                 <Link
                   key={href}
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className={`text-lg transition-colors duration-300 ${
+                  className={`text-lg   text-center transition-colors duration-300 ${
                     isActive
                       ? "text-blue-500"
                       : "text-blue-800 hover:text-blue-500"

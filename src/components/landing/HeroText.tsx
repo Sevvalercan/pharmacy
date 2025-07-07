@@ -76,13 +76,7 @@ export default function HeroText() {
         <span className="text-red-700"> Yanımda</span>
       </div> */}
 
-      <div className="w-[500px]  md:w-[350px]">
-        <img
-          src="/images/logo.svg" // Burada logo dosyanın yolu olmalı
-          alt="İlacım Yanımda Logo"
-          className="w-full h-auto object-contain"
-        />
-      </div>
+     
 
       <div className="pt-32 text-center">
         {displayText.split("").map((char, i) => (

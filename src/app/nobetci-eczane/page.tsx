@@ -29,7 +29,7 @@ export default function DutyPage() {
   };
 
   return (
-    <main className="text-gray-800 p-6 sm:p-10 min-h-screen bg-white">
+    <main className="text-gray-800 p-6 sm:p-10">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-3xl p-8 sm:p-12 space-y-8">
         <header className="text-center">
           <h1 className="text-3xl font-bold text-indigo-700 mb-2">

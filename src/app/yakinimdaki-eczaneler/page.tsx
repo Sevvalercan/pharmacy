@@ -14,15 +14,35 @@ interface Pharmacy {
 }
 
 const ALL_PHARMACIES: Pharmacy[] = [
-  { id: 1, name: "Şişli Nöbetçi Eczanesi", city: "İstanbul", district: "Şişli", distance: 1.2 },
-  { id: 2, name: "Kadıköy Eczanesi", city: "İstanbul", district: "Kadıköy", distance: 3.5 },
-  { id: 3, name: "Çankaya Nöbetçi Eczane", city: "Ankara", district: "Çankaya", distance: 2.1 },
+  {
+    id: 1,
+    name: "Şişli Nöbetçi Eczanesi",
+    city: "İstanbul",
+    district: "Şişli",
+    distance: 1.2,
+  },
+  {
+    id: 2,
+    name: "Kadıköy Eczanesi",
+    city: "İstanbul",
+    district: "Kadıköy",
+    distance: 3.5,
+  },
+  {
+    id: 3,
+    name: "Çankaya Nöbetçi Eczane",
+    city: "Ankara",
+    district: "Çankaya",
+    distance: 2.1,
+  },
   // Daha fazla eczane ekleyebilirsiniz...
 ];
 
 export default function NearbyPage() {
   // Konum durumu
-  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
+  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(
+    null
+  );
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [nearbyPharmacies, setNearbyPharmacies] = useState<Pharmacy[]>([]);
@@ -78,14 +98,16 @@ export default function NearbyPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white p-6 sm:p-10">
+    <main className=" p-6 sm:p-10">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-8">
         <h1 className="text-3xl font-bold text-indigo-700 mb-6 text-center">
           Yakınımdaki Nöbetçi Eczaneler
         </h1>
 
         {/* Hata varsa */}
-        {error && <p className="text-center text-red-600 font-semibold">{error}</p>}
+        {error && (
+          <p className="text-center text-red-600 font-semibold">{error}</p>
+        )}
 
         {/* Otomatik konumdan sonra ya da hata durumunda manuel form */}
         <SearchForm
@@ -109,7 +131,9 @@ export default function NearbyPage() {
         )}
 
         {!loading && aramaYapildi && nearbyPharmacies.length === 0 && (
-          <p className="text-center text-gray-400 italic">Nöbetçi eczane bulunamadı.</p>
+          <p className="text-center text-gray-400 italic">
+            Nöbetçi eczane bulunamadı.
+          </p>
         )}
       </div>
 

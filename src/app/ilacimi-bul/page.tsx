@@ -18,7 +18,7 @@ export default function MedicineSearchPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white p-6 sm:p-10">
+    <main className="p-6 sm:p-10">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-3xl p-8 sm:p-12 space-y-8">
         <h1 className="text-3xl font-bold text-indigo-700 mb-6 text-center">
           İlaç Arama

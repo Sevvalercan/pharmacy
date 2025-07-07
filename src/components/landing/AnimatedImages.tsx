@@ -1,26 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 
 export default function AnimatedImages() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
 
-      // İmleç hareketi
-      if (cursorRef.current) {
-        gsap.to(cursorRef.current, {
-          x: clientX - 15,
-          y: clientY - 15,
-          duration: 0.2,
-          ease: "power2.out",
-        });
-      }
-
-      // 3D hareketli ilaçlar
       const imgs = document.querySelectorAll("img.cursor-anim");
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -42,9 +29,7 @@ export default function AnimatedImages() {
             translateX(${xNorm * movePx}px)
             translateY(${yNorm * movePx}px)
           `,
-          filter: `drop-shadow(${xNorm * 5}px ${
-            -yNorm * 5
-          }px 5px rgba(0,0,0,0.3))`,
+          filter: `drop-shadow(${xNorm * 5}px ${-yNorm * 5}px 5px rgba(0,0,0,0.3))`,
         });
       });
     };
@@ -55,24 +40,6 @@ export default function AnimatedImages() {
 
   return (
     <>
-      {/* Özel fare imleci */}
-      <div
-        ref={cursorRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 30,
-          height: 30,
-          borderRadius: "50%",
-          border: "2px solid rgb(216, 29, 29)",
-          backgroundColor: "rgba(233, 135, 135, 0.3)",
-          pointerEvents: "none",
-          zIndex: 9999,
-          mixBlendMode: "normal",
-        }}
-      />
-
       {/* İlaç görselleri */}
       <div className="fixed top-1/2 left-8 -translate-y-1/2 z-10">
         <img
